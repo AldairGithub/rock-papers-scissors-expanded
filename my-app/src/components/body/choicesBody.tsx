@@ -10,7 +10,9 @@ export const ChoicesBody = () => {
       <p>Choices</p>
       {Object.values(choices).map((ele) => (
         // iterate through values 
-        <ChoiceIcon />
+        <>
+          <ChoiceIcon choice={ele}/>
+        </>
       ))}
     </>
   )
