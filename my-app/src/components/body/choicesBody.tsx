@@ -1,17 +1,16 @@
-import { useState } from "react"
-import { choices } from "./utils"
+import { choices, Props } from "./utils"
 import { ChoiceIcon } from "../body/choiceIcon"
 
-export const ChoicesBody = () => {
-  const [userChoice, setUserChoice] = useState<String>("")
+export const ChoicesBody = (props: Props) => {
+  const {setUserChoice} = props
 
   return (
     <>
       <p>Choices</p>
-      {Object.values(choices).map((ele) => (
+      {Object.values(choices).map((ele, index) => (
         // iterate through values 
         <>
-          <ChoiceIcon choice={ele}/>
+          <ChoiceIcon key={index} choice={ele} setUserChoice={setUserChoice}/>
         </>
       ))}
     </>
