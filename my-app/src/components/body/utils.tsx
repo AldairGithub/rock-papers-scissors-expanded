@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   FaRegHandRock,
   FaRegHandPaper,
@@ -6,17 +7,17 @@ import {
   FaRegHandSpock
 } from 'react-icons/fa'
 
-type Result = {
+export type Result = {
   value: string,
   wlt: string
 }
 
 export type Props = {
   choice?: string,
-  setUserChoice?: (value: string) => void
+  handleResult?: (event: React.MouseEvent, choice: string) => void
 }
 
-const globals = {
+export const globals = {
   win: "win",
   lose: "lose",
   tie: "tie"
@@ -136,5 +137,30 @@ export const Icon = (props: Props) => {
       default:
         return null
     }
+  }
+}
+
+export const userOutcome = (result: Result) => {
+  switch (result.wlt) {
+    case globals.win:
+      return (
+        <>
+          <p>You won!</p>
+        </>
+      )
+    case globals.lose:
+      return (
+        <>
+          <p>You lost...try again!</p>
+        </>
+      )
+    case globals.tie:
+      return (
+        <>
+          <p>You tied! Not bad but try again!</p>
+        </>
+      )
+    default:
+      break;
   }
 }

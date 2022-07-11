@@ -1,13 +1,16 @@
+import React from "react"
 import { Props, Icon } from "./utils"
 
 export const ChoiceIcon = (props: Props) => {
-  const { choice, setUserChoice } = props
+  const { choice, handleResult } = props
 
-  const handleClick = () => {
-    if (setUserChoice !== undefined && choice !== undefined) {
-      setUserChoice(choice)
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault()
+    
+    if (handleResult && choice) {
+      handleResult(event, choice)
     }
-  }
+  } 
 
   const returnedIcon = Icon({choice})
   
