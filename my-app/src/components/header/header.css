@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  padding: 12px;
+  width: fit-content;
+  border-radius: 5px;
+}

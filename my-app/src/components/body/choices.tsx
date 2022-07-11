@@ -6,7 +6,6 @@ export const Choices = (props: Props) => {
 
   return (
     <>
-        <p>Please select one of five options!</p>
       <ChoicesBody handleResult={handleResult}/>
     </>
   )
