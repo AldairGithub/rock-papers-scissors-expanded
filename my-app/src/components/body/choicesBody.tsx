@@ -1,16 +1,15 @@
 import { choices, Props } from "./utils"
-import { ChoiceIcon } from "../body/choiceIcon"
+import { ChoiceIcon } from "./choiceIcon"
 
 export const ChoicesBody = (props: Props) => {
-  const {setUserChoice} = props
+  const {handleResult} = props
 
   return (
     <>
-      <p>Choices</p>
       {Object.values(choices).map((ele, index) => (
         // iterate through values 
         <>
-          <ChoiceIcon key={index} choice={ele} setUserChoice={setUserChoice}/>
+          <ChoiceIcon key={index} choice={ele} handleResult={handleResult}/>
         </>
       ))}
     </>
