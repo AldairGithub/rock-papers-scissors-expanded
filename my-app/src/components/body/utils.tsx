@@ -23,11 +23,11 @@ export const globals = {
   tie: "tie"
 }
 export const choices = {
-  rock: "rock",
-  paper: "paper",
-  scissors: "scissors",
+  spock: "spock",
   lizard: "lizard",
-  spock: "spock"
+  scissors: "scissors",
+  rock: "rock",
+  paper: "paper"
 }
 
 const orWinsOrLoses = (choice: Boolean) => {
@@ -99,6 +99,8 @@ export const returnsWinLoseTie = (userChoice: String, randomChoice: String) => {
     return result
 }
 
+const iconSize = 24
+
 export const Icon = (props: Props) => {
   const {choice} = props
 
@@ -107,31 +109,31 @@ export const Icon = (props: Props) => {
       case choices.rock:
         return (
           <>
-            <FaRegHandRock />
+            <FaRegHandRock size={iconSize }/>
           </>
         )
       case choices.paper:
         return (
           <>
-            <FaRegHandPaper />
+            <FaRegHandPaper size={iconSize }/>
           </>
         )
       case choices.scissors:
         return (
           <>
-            <FaRegHandScissors />
+            <FaRegHandScissors size={iconSize }/>
           </>
         )
       case choices.lizard:
         return (
           <>
-            <FaRegHandLizard />
+            <FaRegHandLizard size={iconSize }/>
           </>
         )
       case choices.spock:
         return (
           <>
-            <FaRegHandSpock />
+            <FaRegHandSpock size={iconSize }/>
           </>
         )
       default:
@@ -162,5 +164,78 @@ export const userOutcome = (result: Result) => {
       )
     default:
       break;
+  }
+}
+
+export const iconColors = (choice: string) => {
+  switch (choice) {
+    case choices.lizard:
+      return "#ffbe0b"
+    case choices.paper:
+      return "#fb5607"
+    case choices.rock:
+      return "#ff006e"
+    case choices.scissors:
+      return "#8338ec"
+    case choices.spock:
+      return "#3a86ff"
+    default:
+      break;
+  }
+}
+export const iconColorsOnRightSide = (choice: string) => {
+  switch (choice) {
+    case choices.lizard:
+      return "#8338ec"
+    case choices.paper:
+      return  "#3a86ff"
+    case choices.rock:
+      return "#fb5607"
+    case choices.scissors:
+      return "#ff006e"
+    case choices.spock:
+      return "#ffbe0b"
+    default:
+      break;
+  }
+}
+
+const top = {
+  position: "absolute",
+  bottom: "80px"
+}
+const leftTop = {
+  position: "absolute",
+  left: "-10px"
+}
+const rightTop = {
+  position: "absolute",
+  right: "-10px"
+}
+const leftBottom = {
+  position: "absolute",
+  top: "20px"
+}
+const rightBottom = {
+  position: "absolute",
+  top: "20px"
+}
+
+export const iconPositions = (choice: string) => {
+  if (choice !== undefined) {
+    switch (choice) {
+      case choices.scissors:
+        return top;
+      case choices.spock:
+        return leftTop;
+      case choices.paper:
+        return rightTop;
+      case choices.lizard:
+        return leftBottom;
+      case choices.rock:
+        return rightBottom;
+      default:
+        break;
+    }
   }
 }

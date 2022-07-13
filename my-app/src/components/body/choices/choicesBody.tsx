@@ -1,5 +1,5 @@
-import { choices, Props } from "./utils"
-import { ChoiceIcon } from "./choiceIcon"
+import { choices, Props } from "../utils"
+import { ChoiceContainer } from "./choiceContainer"
 
 export const ChoicesBody = (props: Props) => {
   const {handleResult} = props
@@ -9,7 +9,7 @@ export const ChoicesBody = (props: Props) => {
       {Object.values(choices).map((ele, index) => (
         // iterate through values 
         <>
-          <ChoiceIcon key={index} choice={ele} handleResult={handleResult}/>
+          <ChoiceContainer key={index} choice={ele} handleResult={handleResult}/>
         </>
       ))}
     </>
