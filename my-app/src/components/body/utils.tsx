@@ -29,6 +29,13 @@ export const choices = {
   rock: "rock",
   paper: "paper"
 }
+const choicesColors = {
+  lizard: "#ffbe0b",
+  paper: "#fb5607",
+  spock: "#3a86ff",
+  rock: "#ff006e",
+  scissors: "#8338ec"
+}
 
 const orWinsOrLoses = (choice: Boolean) => {
   if (choice) {
@@ -170,15 +177,15 @@ export const userOutcome = (result: Result) => {
 export const iconColors = (choice: string) => {
   switch (choice) {
     case choices.lizard:
-      return "#ffbe0b"
+      return choicesColors.lizard
     case choices.paper:
-      return "#fb5607"
+      return choicesColors.paper
     case choices.rock:
-      return "#ff006e"
+      return choicesColors.rock
     case choices.scissors:
-      return "#8338ec"
+      return choicesColors.scissors
     case choices.spock:
-      return "#3a86ff"
+      return choicesColors.spock
     default:
       break;
   }
@@ -186,15 +193,15 @@ export const iconColors = (choice: string) => {
 export const iconColorsOnRightSide = (choice: string) => {
   switch (choice) {
     case choices.lizard:
-      return "#8338ec"
+      return choicesColors.scissors
     case choices.paper:
-      return  "#3a86ff"
+      return  choicesColors.spock
     case choices.rock:
-      return "#fb5607"
+      return choicesColors.paper
     case choices.scissors:
-      return "#ff006e"
+      return choicesColors.rock
     case choices.spock:
-      return "#ffbe0b"
+      return choicesColors.lizard
     default:
       break;
   }
@@ -202,23 +209,32 @@ export const iconColorsOnRightSide = (choice: string) => {
 
 const top = {
   position: "absolute",
-  bottom: "80px"
+  top: "0",
+  cursor: "pointer"
 }
 const leftTop = {
   position: "absolute",
-  left: "-10px"
+  left: "0",
+  top: "80px",
+  cursor: "pointer"
 }
 const rightTop = {
   position: "absolute",
-  right: "-10px"
+  right: "0",
+  top: "80px",
+  cursor: "pointer"
 }
 const leftBottom = {
   position: "absolute",
-  top: "20px"
+  bottom: "0",
+  left: "45px",
+  cursor: "pointer"
 }
 const rightBottom = {
   position: "absolute",
-  top: "20px"
+  bottom: "0",
+  right: "45px",
+  cursor: "pointer"
 }
 
 export const iconPositions = (choice: string) => {

@@ -1,6 +1,7 @@
 import { ChoiceIcon } from "./choiceIcon"
-import { Props } from "../utils"
+import { Props, iconPositions } from "../utils"
 import './choices.css'
+import React, { CSSProperties } from "react"
 
 export const ChoiceContainer = (props: Props) => {
   const {choice, handleResult } = props
@@ -12,8 +13,11 @@ export const ChoiceContainer = (props: Props) => {
       handleResult(event, choice)
     }
   }
+
+  const returnedPosition = iconPositions(choice!) as CSSProperties
+
   return (
-    <div className={"choicesPosition"} onClick={handleClick}>
+    <div style={returnedPosition} onClick={handleClick}>
       <ChoiceIcon choice={choice}/>
     </div>
   )

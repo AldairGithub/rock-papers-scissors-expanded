@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Choices } from './choices/choices'
-import { Outcome } from './outcome'
+import { Outcome } from './outcome/outcome'
 import { randomizer, Result, returnsWinLoseTie } from './utils'
 import './body.css'
 
@@ -9,8 +9,13 @@ export const Body = () => {
     value: "",
     wlt: ""
   }
+  const resetChoices = ""
   const [displayResult, setDisplayResult] = useState<Boolean>(false)
   const [finalResult, setFinalResult] = useState<Result>(resetValue)
+  const [values, setValues] = useState({
+    user: resetChoices,
+    computer: resetChoices
+  })
 
   const handleResult = (event: React.MouseEvent, choice: string) => {
     event.preventDefault()
@@ -19,6 +24,10 @@ export const Body = () => {
     const result = returnsWinLoseTie(user, computer)
     setFinalResult(result)
     setDisplayResult(true)
+    setValues({
+      user: user,
+      computer: computer
+    })
   }
 
   const handleReset = (event: React.MouseEvent) => {
@@ -30,7 +39,7 @@ export const Body = () => {
     <body>
       <div className="bodyContainer">
         {displayResult ?
-          <Outcome result={finalResult!} handleReset={handleReset} /> : 
+          <Outcome result={finalResult!} handleReset={handleReset} values={ values}/> : 
           <Choices handleResult={handleResult}/>
         }
       </div>
