@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import { Choices } from './choices'
+import { Choices } from './choices/choices'
 import { Outcome } from './outcome'
 import { randomizer, Result, returnsWinLoseTie } from './utils'
+import './body.css'
 
 export const Body = () => {
   const resetValue: Result = {
@@ -27,7 +28,7 @@ export const Body = () => {
 
   return (
     <body>
-      <div>
+      <div className="bodyContainer">
         {displayResult ?
           <Outcome result={finalResult!} handleReset={handleReset} /> : 
           <Choices handleResult={handleResult}/>
