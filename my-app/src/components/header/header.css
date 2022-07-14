@@ -6,8 +6,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: column nowrap;
   border: 1px solid #fff;
   padding: 12px;
   width: fit-content;
   border-radius: 5px;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  font-size: 24px;
+
+}
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
 }

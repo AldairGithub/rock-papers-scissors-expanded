@@ -21,4 +21,13 @@
   color: #fff;
   padding: 12px 48px;
   cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.tryAgainButton:hover {
+  background-color: #ff595e;
+}
+
+.tryAgainButton:focus-visible {
+  outline-color: #000000;
 }

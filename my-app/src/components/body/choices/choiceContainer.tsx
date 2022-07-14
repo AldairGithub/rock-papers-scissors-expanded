@@ -6,10 +6,15 @@ import React, { CSSProperties } from "react"
 export const ChoiceContainer = (props: Props) => {
   const {choice, handleResult } = props
   
-  const handleClick = (event: React.MouseEvent) => {
+  const handleClick = (event: any) => {
     event.preventDefault()
     
     if (handleResult && choice) {
+      handleResult(event, choice)
+    }
+  }
+  const handlePress = (event: any) => {
+    if (event.key === 'Enter' && ( choice && handleResult)) {
       handleResult(event, choice)
     }
   }
@@ -17,7 +22,7 @@ export const ChoiceContainer = (props: Props) => {
   const returnedPosition = iconPositions(choice!) as CSSProperties
 
   return (
-    <div style={returnedPosition} onClick={handleClick}>
+    <div tabIndex={0} className={"outlineFocus"} style={returnedPosition} onClick={handleClick} onKeyDown={handlePress}>
       <ChoiceIcon choice={choice}/>
     </div>
   )

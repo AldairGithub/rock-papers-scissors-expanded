@@ -16,7 +16,7 @@ export const ChoiceIcon = (props: Props) => {
   
   return (
     <>
-      <div tabIndex={0} role="choicebutton" aria-labelledby="choice option" className={"outerIcon"}>
+      <div role="choicebutton" aria-labelledby="choice option" className={"outerIcon"}>
         <div style={color}>
           <div className={"iconContainer"}>
             {returnedIcon}
