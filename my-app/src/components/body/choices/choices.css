@@ -8,6 +8,10 @@
   margin: 0 auto;
   position: relative;
 }
+.outlineFocus:focus-visible {
+  outline-color: #000000;
+  border-radius: 50%;
+}
 
 .outerIcon {
   border: 1px solid #000000;
@@ -15,10 +19,6 @@
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-}
-
-.outerIcon:focus-visible {
-  outline-color: #000000;
 }
 
 .iconContainer {
