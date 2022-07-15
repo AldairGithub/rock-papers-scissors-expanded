@@ -22,6 +22,19 @@ export const globals = {
   lose: "lose",
   tie: "tie"
 }
+const expression = {
+  win: "You won!",
+  lose: "You lost...Try again!",
+  tie: "You tied! Not bad but try again!"
+}
+export const colorWin = {
+  color: "#52b69a",
+  fontWeight: "bolder"
+}
+export const colorLose = {
+  color: "#f94144",
+  fontWeight: "bolder"
+}
 export const choices = {
   spock: "spock",
   lizard: "lizard",
@@ -154,19 +167,19 @@ export const userOutcome = (result: Result) => {
     case globals.win:
       return (
         <>
-          <p>You won!</p>
+          <p>{expression.win}</p>
         </>
       )
     case globals.lose:
       return (
         <>
-          <p>You lost...try again!</p>
+          <p>{expression.lose}</p>
         </>
       )
     case globals.tie:
       return (
         <>
-          <p>You tied! Not bad but try again!</p>
+          <p>{expression.tie}</p>
         </>
       )
     default:

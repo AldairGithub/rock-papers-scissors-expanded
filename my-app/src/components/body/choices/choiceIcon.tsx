@@ -5,18 +5,18 @@ import "./choices.css"
 export const ChoiceIcon = (props: Props) => {
   const { choice } = props
 
-  const color =  {
+  const color = {
     maxWidth: "fit-content",
     padding: "15px",
     borderRadius: "50%",
-    background: `linear-gradient(45deg, ${iconColors(choice!)} 30%, ${iconColorsOnRightSide(choice!)} 100%)`
+    background: `linear-gradient(45deg, ${iconColors(choice!)} 30%, ${iconColorsOnRightSide(choice!)} 100%)`,
   }
 
   const returnedIcon = Icon({ choice });
   
   return (
     <>
-      <div role="choicebutton" aria-labelledby="choice option" className={"outerIcon"}>
+      <div role="choicebutton" title={choice} className={"outerIcon"}>
         <div style={color}>
           <div className={"iconContainer"}>
             {returnedIcon}
