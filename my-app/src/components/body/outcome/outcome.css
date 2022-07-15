@@ -10,7 +10,15 @@
 .outcomeIcons {
   display: flex;
   flex-flow: column nowrap;
-  padding: 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px ;
+  padding:  0px 24px;
+}
+
+.resultContainer {
+  font-size: 21px;
+  margin-top: 8px;
 }
 
 .tryAgainButton {
@@ -25,7 +33,7 @@
 }
 
 .tryAgainButton:hover {
-  background-color: #ff595e;
+  background-color: #006d77;
 }
 
 .tryAgainButton:focus-visible {

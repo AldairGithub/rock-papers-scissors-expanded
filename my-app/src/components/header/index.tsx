@@ -1,3 +1,4 @@
+import { colorWin, colorLose } from '../body/utils'
 import './header.css'
 
 type Props = {
@@ -12,8 +13,8 @@ export const Header = (props: Props) => {
       <div className="container">
         <h1>Rock paper scissors expanded</h1>
         <div className="scoreContainer">
-          <p className="score">User: {score.user}</p>
-          <p className="score">Computer: { score.computer}</p>
+          <p className="score" style={colorWin}>User: {score.user}</p>
+          <p className="score" style={colorLose}>Computer: { score.computer}</p>
         </div>
       </div>
     </header>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Result, userOutcome } from "../utils"
+import { colorLose, colorWin, globals, Result, userOutcome } from "../utils"
 import { OutcomeValues } from "./outcomeValues"
 
 type Props = {
@@ -10,12 +10,24 @@ type Props = {
 
 export const Outcome = (props: Props) => {
   const { result, handleReset, values } = props
+
+  const colorChange = () => {
+    if (result.wlt === globals.win) {
+      return colorWin
+    } else if (result.wlt === globals.lose) {
+      return colorLose
+    }
+  }
   
   return (
     <>
-      <OutcomeValues values={ values}/>
-      {result.value}
-      {userOutcome(result)}
+      <OutcomeValues values={values} />
+      <div className={"resultContainer"}>
+        {result.value}
+        <span style={colorChange()}>
+          {userOutcome(result)}
+        </span>
+      </div>
       <button
         className={"tryAgainButton" }
         onClick={(event) => handleReset(event)}
