@@ -1,0 +1,36 @@
+/* controls the position of the choices as well as the area that they are bound to */
+.choicesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 280px;
+  margin: 0 auto;
+  position: relative;
+}
+.outlineFocus:focus-visible {
+  outline-color: #000000;
+  border-radius: 50%;
+}
+
+.outerIcon {
+  border: 1px solid #000000;
+  width: fit-content;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  color: #000000;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 1px solid #000000;
+}
